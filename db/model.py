@@ -1,7 +1,7 @@
 
-from sqlalchemy import create_engine, ForeignKey, Column, Integer
+from sqlalchemy import create_engine, ForeignKey,Column, Integer
 from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy as db
 
@@ -13,7 +13,7 @@ engine = create_engine('sqlite:///baza.db')
 
 Model.metadata.bind = engine
 # create a configured "Session" class
-Session = sessionmaker(bind=engine)
+Session =scoped_session(sessionmaker(bind=engine))
 
 # create a Session
 session = Session()
@@ -29,11 +29,13 @@ class Termin(Model):
     __tablename__ = 'termini'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column('title', db.String(32))
-    date = db.Column('date', db.Date)
-    startTime= db.Column('startTime', db.Integer)
+    date = db.Column('date', db.String)
+    startTime= db.Column('startTime', db.String)
+    endTime= db.Column('endTime', db.String)
     duration = db.Column('duration', db.Float)
     studiji_id=  Column(Integer, ForeignKey('studiji.id'))
     person = relationship(Studiji)
 
 
 Model.metadata.create_all(engine)
+
