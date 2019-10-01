@@ -75,6 +75,12 @@ public interface Api {
         @GET("21")
         Call<List<Termini>> getStr5M();
 
+        @GET("22")
+        Call<List<Termini>> getEle4EE();
+
+        @GET("23")
+        Call<List<Termini>> getEle4SUA();
+
 
 
 

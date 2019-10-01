@@ -56,6 +56,23 @@ public class elektrotehnika extends AppCompatActivity {
             }
         });
 
+
+        elektrotehnika1= (Button) findViewById(R.id.EE1);
+        elektrotehnika1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openElektrotehnika4EE();
+            }
+        });
+
+
+        elektrotehnika1= (Button) findViewById(R.id.SUA1);
+        elektrotehnika1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openElektrotehnika4SUA();
+            }
+        });
     }
 
     public void openPocetna(){
@@ -75,6 +92,16 @@ public class elektrotehnika extends AppCompatActivity {
 
     public void openElektrotehnika3(){
         Intent intent= new Intent(this, elektrotehnika3.class);
+        startActivity(intent);
+    }
+
+    public void openElektrotehnika4EE(){
+        Intent intent= new Intent(this, elektrotehnika_EE1.class);
+        startActivity(intent);
+    }
+
+    public void openElektrotehnika4SUA(){
+        Intent intent= new Intent(this, elektrotehnika_SUA1.class);
         startActivity(intent);
     }
 }

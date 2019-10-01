@@ -4,34 +4,25 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.ParsePosition;
-import java.util.Date;
-
 
 import com.example.zavrsni3.Api;
 import com.example.zavrsni3.MainActivity;
 import com.example.zavrsni3.R;
 import com.example.zavrsni3.Termini;
 
-import java.security.Timestamp;
 import java.text.DateFormat;
-import java.text.ParseException;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Locale;
 import java.util.TimeZone;
 
 import retrofit2.Call;
@@ -40,18 +31,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class elektrotehnika1 extends AppCompatActivity {
+public class elektrotehnika_SUA1 extends AppCompatActivity {
 
     private ImageView pocetna;
-
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_elektrotehnika1);
+        setContentView(R.layout.activity_elektrotehnika__sua1);
 
-        final ListView listView=(ListView) findViewById(R.id.ele1ispis);
+        final ListView listView=(ListView) findViewById(R.id.ele4SUAipis);
 
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(Api.BASE_URL)
@@ -68,7 +58,7 @@ public class elektrotehnika1 extends AppCompatActivity {
             }
         });
 
-        Call<List<Termini>> call= api.getEle1();
+        Call<List<Termini>> call= api.getEle4SUA();
 
         call.enqueue(new Callback<List<Termini>>() {
             @Override
@@ -109,22 +99,28 @@ public class elektrotehnika1 extends AppCompatActivity {
                 list.removeAll(Arrays.asList("0"));
                 terminNaziv = list.toArray(EMPTY_STRING_ARRAY);
 
+
                 listView.setAdapter(
                         new ArrayAdapter<String>(
 
                                 getApplicationContext(),
                                 R.layout.layout22,
                                 terminNaziv
+
                         )
+
                 );
+
             }
+
             @Override
             public void onFailure(Call<List<Termini>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Trenutno nedostupno", Toast.LENGTH_SHORT).show();
             }
+
         });
-    }
-    public void openPocetna(){
+
+    }public void openPocetna(){
         Intent intent= new Intent(this, MainActivity.class);
         startActivity(intent);
     }

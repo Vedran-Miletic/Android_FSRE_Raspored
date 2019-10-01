@@ -136,12 +136,12 @@ public class strojarstvo extends AppCompatActivity {
     }
 
     public void openStrojarstvo2(){ //otvara strojarstvo1
-        Intent intent= new Intent(this, strojarstvo1.class);
+        Intent intent= new Intent(this, strojarstvo2.class);
         startActivity(intent);
     }
 
     public void openStrojarstvo1(){ //otvara strojarstvo2
-        Intent intent= new Intent(this, strojarstvo2.class);
+        Intent intent= new Intent(this, strojarstvo1.class);
         startActivity(intent);
     }
 

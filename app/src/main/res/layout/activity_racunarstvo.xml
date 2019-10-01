@@ -185,7 +185,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:background="#A7ACB7"
-                    android:text="2. GODINA | PIIS"
+                    android:text="2. GODINA | RSIM"
                     android:textColor="#FFFFFF"
                     android:textSize="10sp" />
 

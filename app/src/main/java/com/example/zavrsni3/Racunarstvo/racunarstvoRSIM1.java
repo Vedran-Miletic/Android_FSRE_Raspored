@@ -118,7 +118,7 @@ public class racunarstvoRSIM1 extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Termini>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Trenutno nedostupno", Toast.LENGTH_SHORT).show();
             }
         });
     }

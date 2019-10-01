@@ -154,24 +154,24 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/PIIS1"
+                    android:id="@+id/EE1"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:background="#173268"
-                    android:text="#"
+                    android:text="1. GODINA | EE"
                     android:textColor="#FFFFFF"
                     android:textSize="10sp" />
 
                 <Button
-                    android:id="@+id/RSIM1"
+                    android:id="@+id/SUA1"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:background="#A7ACB7"
-                    android:text="#"
+                    android:text="1. GODINA | SUA"
                     android:textColor="#FFFFFF"
                     android:textSize="10sp" />
 
