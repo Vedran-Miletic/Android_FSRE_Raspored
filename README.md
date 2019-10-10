@@ -19,14 +19,14 @@ Mobilna aplikacija ima funkciju:
 
 1. **Python 3.* **
 
-2. ** SQLAlchemy ** 
+2. **SQLAlchemy ** 
 
-3. ** Flask **
+3. **Flask **
 
-4. ** tqdm **
+4. **tqdm **
 
-5. ** Beautifulsoup4 **
+5. **Beautifulsoup4 **
 
-6. ** Android studio **
+6. **Android studio **
 
-7. ** retrofit **
+7. **retrofit **
